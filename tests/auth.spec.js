@@ -58,4 +58,19 @@ test("Counter should increment, decrement, and reset correctly", async ({
     await expect(page.getByRole("paragraph")).toHaveText("0");
   });
   
- 
+  //Test 3
+  test("User should logout successfully", async ({ page }) => {
+    await page.goto("/login");
+  
+    await page.locator("#email-input").fill("test@maddox123.ai");
+    await page.locator("#password-input").fill("supersecure");
+    await page.getByRole("button", { name: "Login" }).click();
+  
+    await expect(page.getByRole("button", { name: "Logout" })).toBeVisible();
+  
+    await page.getByRole("button", { name: "Logout" }).click();
+  
+    await page.goto("/");
+    await expect(page).toHaveURL("/login");
+  });
+  
