@@ -25,12 +25,6 @@ export default defineConfig({
 
   reporter: "html",
 
-  webServer: {
-    command: "npm run build && npm run start", // Or whatever starts your local app
-    port: 3000,
-    timeout: 120 * 1000, // Wait for app to be ready (2 mins max)
-    reuseExistingServer: !process.env.CI, // Don't restart locally
-  },
   use: {
     baseURL: "http://localhost:3000",
     trace: "on-first-retry",
