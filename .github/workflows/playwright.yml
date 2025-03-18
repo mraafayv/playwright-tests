@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Start Web App & Run Tests
-        run: npm run playwright test
+        run: npx playwright test
