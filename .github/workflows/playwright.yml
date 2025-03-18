@@ -24,7 +24,7 @@ jobs:
           npm run build 
 
       - name: Start Web App
-        run: cd web-app && npm run start 
+        run: cd web-app && npm run start &
 
       - name: Install Playwright Dependencies
         run: npm ci
